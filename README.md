@@ -9,7 +9,6 @@ file/isBarrel
 jsx/getJsxNodes
 jsx/hasJsxNode
 node/getDeclarationsForSymbols
-node/getDescendantsOfKinds
 node/getExportDeclarationForIdentifier
 node/getImportDeclarationsForSymbols
 node/getSymbolsOfNodes
