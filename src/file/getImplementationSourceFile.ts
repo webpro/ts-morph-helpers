@@ -1,13 +1,11 @@
-import { Identifier, ts } from 'ts-morph';
-import type { SourceFile, ImportDeclaration } from 'ts-morph';
+import { ts } from 'ts-morph';
+import type { SourceFile, ImportDeclaration, Identifier } from 'ts-morph';
+import { getExportDeclarationForIdentifier } from '../node/getExportDeclarationForIdentifier';
 
 const getIdentifierSourceFile = (sourceFile: SourceFile, identifier: Identifier): SourceFile | undefined => {
-  const exportDeclaration = sourceFile.getExportDeclaration(exportDeclaration => {
-    const namedExports = exportDeclaration.getNamedExports();
-    return Boolean(namedExports.find(namedExport => namedExport.getName() === identifier.getText()));
-  });
+  const exportDeclaration = getExportDeclarationForIdentifier(sourceFile, identifier);
   const targetFile = exportDeclaration?.getModuleSpecifierSourceFile();
-  return targetFile ? getIdentifierSourceFile(targetFile, identifier) : sourceFile;
+  return targetFile && targetFile !== sourceFile ? getIdentifierSourceFile(targetFile, identifier) : sourceFile;
 };
 
 export const getImplementationSourceFile = (importDeclaration: ImportDeclaration): SourceFile | undefined => {
