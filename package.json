@@ -1,0 +1,22 @@
+{
+  "name": "ts-morph-helpers",
+  "version": "0.0.0",
+  "description": "Helpers for ts-morph",
+  "scripts": {
+    "test": "node --loader tsx --test src/**/*.spec.ts "
+  },
+  "keywords": [],
+  "author": {
+    "name": "Lars Kappert",
+    "email": "lars@webpro.nl"
+  },
+  "license": "Unlicense",
+  "dependencies": {
+    "ts-morph": "16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.20",
+    "tsx": "3.9.0"
+  }
+}
