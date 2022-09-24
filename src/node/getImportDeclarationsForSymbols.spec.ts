@@ -13,7 +13,16 @@ test('getImportDeclarationsForSymbols', () => {
   const symbols = identifiers
     .filter(identifier => /[ab]/.test(identifier.getText()))
     .map(identifier => identifier.getSymbolOrThrow());
-  const result = getImportDeclarationsForSymbols(symbols);
-  assert(result.length === 1);
-  assert(result[0].isKind(ts.SyntaxKind.ImportDeclaration));
+
+  {
+    const result = getImportDeclarationsForSymbols(symbols);
+    assert(result.length === 1);
+    assert(result[0].isKind(ts.SyntaxKind.ImportDeclaration));
+  }
+
+  {
+    const result = getImportDeclarationsForSymbols(symbols, { onlyRelative: false });
+    assert(result.length === 2);
+    assert(result[1].isKind(ts.SyntaxKind.ImportDeclaration));
+  }
 });
