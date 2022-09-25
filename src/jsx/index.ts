@@ -1,2 +1,2 @@
-export * from './getJsxNodes';
-export * from './hasJsxNode';
+export * from './findJsxNodes';
+export * from './findJsxNodeByName';

@@ -10,7 +10,7 @@ export const getImportDeclarationsForSymbols: GetImportDeclarationsForSymbols = 
   options = { onlyRelative: true }
 ) => {
   const declarations = getDeclarationsForSymbols(symbols);
-  const importDeclarations = Array.from(declarations)
+  const importDeclarations = declarations
     .filter(
       declaration => declaration.isKind(ts.SyntaxKind.ImportSpecifier) || declaration.isKind(ts.SyntaxKind.ImportClause)
     )
