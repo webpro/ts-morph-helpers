@@ -1,12 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert';
 import { Project, ts } from 'ts-morph';
-import { getExportDeclarationForIdentifier } from './getExportDeclarationForIdentifier';
+import { findExportDeclarationByIdentifier } from './findExportDeclarationByIdentifier';
 
-test('getExportDeclarationForIdentifier', () => {
+test('findExportDeclarationByIdentifier', () => {
   const project = new Project({ useInMemoryFileSystem: true });
   const sourceFile = project.createSourceFile('index.ts', `const a = 1; export { a };`);
   const identifier = sourceFile.getFirstDescendantByKindOrThrow(ts.SyntaxKind.Identifier);
-  const result = getExportDeclarationForIdentifier(sourceFile, identifier);
+  const result = findExportDeclarationByIdentifier(sourceFile, identifier);
   assert(result?.isKind(ts.SyntaxKind.ExportDeclaration));
 });

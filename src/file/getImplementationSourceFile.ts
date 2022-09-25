@@ -1,9 +1,9 @@
 import { ts } from 'ts-morph';
 import type { SourceFile, ImportDeclaration, Identifier } from 'ts-morph';
-import { getExportDeclarationForIdentifier } from '../node/getExportDeclarationForIdentifier';
+import { findExportDeclarationByIdentifier } from '../node/findExportDeclarationByIdentifier';
 
 const getSourceFileForIdentifier = (sourceFile: SourceFile, identifier: Identifier): SourceFile | undefined => {
-  const exportDeclaration = getExportDeclarationForIdentifier(sourceFile, identifier);
+  const exportDeclaration = findExportDeclarationByIdentifier(sourceFile, identifier);
   const targetFile = exportDeclaration?.getModuleSpecifierSourceFile();
   return targetFile && targetFile !== sourceFile ? getSourceFileForIdentifier(targetFile, identifier) : sourceFile;
 };

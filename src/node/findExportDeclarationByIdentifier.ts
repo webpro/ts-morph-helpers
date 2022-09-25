@@ -1,7 +1,7 @@
 import { ExportDeclaration, Identifier } from 'ts-morph';
 import type { SourceFile } from 'ts-morph';
 
-export const getExportDeclarationForIdentifier = (
+export const findExportDeclarationByIdentifier = (
   sourceFile: SourceFile,
   identifier: Identifier
 ): ExportDeclaration | undefined =>
