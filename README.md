@@ -3,13 +3,19 @@
 Helpers for [ts-morph](https://ts-morph.com).
 
 ```
-expressions/getCallExpressionsWithArg
+src $ ls **/*.ts | grep -v spec | grep -v index.ts | sed "s/\.ts//"
+expressions/findCallExpressionsWithArg
 file/getImplementationSourceFile
 file/isBarrel
-jsx/getJsxNodes
-jsx/hasJsxNode
+jsx/findJsxNodeByName
+jsx/findJsxNodes
+node/findExportDeclarationByIdentifier
+node/findExportDeclarationByName
+node/findExportIdentifierByName
+node/findExportSpecifierByName
+node/findImportIdentifierByName
+node/findImportSpecifierByName
 node/getDeclarationsForSymbols
-node/getExportDeclarationForIdentifier
 node/getImportDeclarationsForSymbols
 node/getSymbolsOfNodes
 react/getHookCallExpressions
