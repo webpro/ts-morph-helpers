@@ -4,7 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "allowUmdGlobalAccess": false,
     "baseUrl": ".",
-    "declaration": false,
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -12,13 +12,16 @@
     "lib": ["esnext"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "noEmit": true,
+    "noEmit": false,
+    "outDir": "./dist",
     "resolveJsonModule": true,
-    "rootDir": ".",
+    "rootDir": "./src",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
     "target": "esnext"
-  }
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./src/**/*.spec.ts"]
 }

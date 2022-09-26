@@ -2,11 +2,17 @@
   "name": "ts-morph-helpers",
   "version": "0.0.0",
   "description": "Helpers for ts-morph",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "test": "node --loader tsx --test src/**/*.spec.ts",
-    "barrel": "barrel-maintainer --includeRootDir --singleQuotes --ts ./src"
+    "build": "rm -r dist && tsc",
+    "barrel": "barrel-maintainer --includeRootDir --singleQuotes --ts ./src",
+    "prepublishOnly": "npm test && npm run build",
+    "release": "release-it"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": {
     "name": "Lars Kappert",
@@ -17,9 +23,16 @@
     "ts-morph": "16.0.0"
   },
   "devDependencies": {
-    "@types/node": "18.7.20",
+    "@types/node": "18.7.22",
     "@types/react": "18.0.21",
     "barrel-maintainer": "1.5.3",
-    "tsx": "3.9.0"
+    "release-it": "15.4.2",
+    "tsx": "3.9.0",
+    "typescript": "4.8.3"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
   }
 }
