@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert';
 import { Project, ts } from 'ts-morph';
-import { getHookCallExpressions } from './getHookCallExpressions';
+import { findHookCallExpressions } from './findHookCallExpressions';
 
-test('getCallExpressionsWithArg', () => {
+test('findHookCallExpressions', () => {
   const project = new Project({ useInMemoryFileSystem: true });
   const sourceFile = project.createSourceFile(
     'index.ts',
@@ -16,7 +16,7 @@ test('getCallExpressionsWithArg', () => {
         return null;
       }`
   );
-  const result = getHookCallExpressions(sourceFile);
+  const result = findHookCallExpressions(sourceFile);
   assert(result.length === 3);
   assert(result[0].isKind(ts.SyntaxKind.CallExpression));
 });

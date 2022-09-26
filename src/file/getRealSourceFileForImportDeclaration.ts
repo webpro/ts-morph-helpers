@@ -2,14 +2,14 @@ import { ts } from 'ts-morph';
 import type { SourceFile, ImportDeclaration, Identifier } from 'ts-morph';
 import { findExportDeclarationByIdentifier } from '../node/findExportDeclarationByIdentifier';
 
-const getSourceFileForIdentifier = (sourceFile: SourceFile, identifier: Identifier): SourceFile | undefined => {
+const getRealSourceFileForIdentifier = (sourceFile: SourceFile, identifier: Identifier): SourceFile => {
   const exportDeclaration = findExportDeclarationByIdentifier(sourceFile, identifier);
   const targetFile = exportDeclaration?.getModuleSpecifierSourceFile();
-  return targetFile && targetFile !== sourceFile ? getSourceFileForIdentifier(targetFile, identifier) : sourceFile;
+  return targetFile && targetFile !== sourceFile ? getRealSourceFileForIdentifier(targetFile, identifier) : sourceFile;
 };
 
-export const getImplementationSourceFile = (importDeclaration: ImportDeclaration): SourceFile | undefined => {
+export const getRealSourceFileForImportDeclaration = (importDeclaration: ImportDeclaration) => {
   const sourceFile = importDeclaration.getModuleSpecifierSourceFileOrThrow();
   const identifier = importDeclaration.getFirstDescendantByKindOrThrow(ts.SyntaxKind.Identifier);
-  return getSourceFileForIdentifier(sourceFile, identifier);
+  return getRealSourceFileForIdentifier(sourceFile, identifier);
 };

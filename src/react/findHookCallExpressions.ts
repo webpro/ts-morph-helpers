@@ -1,7 +1,7 @@
 import { ts } from 'ts-morph';
-import type { SourceFile, Node } from 'ts-morph';
+import type { SourceFile } from 'ts-morph';
 
-export const getHookCallExpressions = (sourceFile: SourceFile): Node[] => {
+export const findHookCallExpressions = (sourceFile: SourceFile) => {
   const callExpressions = sourceFile.getDescendantsOfKind(ts.SyntaxKind.CallExpression);
   return callExpressions.filter(callExpression => callExpression.getText().startsWith('use'));
 };
