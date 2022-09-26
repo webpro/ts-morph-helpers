@@ -5,6 +5,14 @@ import { findExportDeclarationByIdentifier } from './findExportDeclarationByIden
 
 test('findExportDeclarationByIdentifier', () => {
   const project = new Project({ useInMemoryFileSystem: true });
+  const sourceFile = project.createSourceFile('index.ts', `export const a = 1`);
+  const identifier = sourceFile.getFirstDescendantByKindOrThrow(ts.SyntaxKind.Identifier);
+  const result = findExportDeclarationByIdentifier(sourceFile, identifier);
+  assert(!result);
+});
+
+test('findExportDeclarationByIdentifier', () => {
+  const project = new Project({ useInMemoryFileSystem: true });
   const sourceFile = project.createSourceFile('index.ts', `const a = 1; export { a };`);
   const identifier = sourceFile.getFirstDescendantByKindOrThrow(ts.SyntaxKind.Identifier);
   const result = findExportDeclarationByIdentifier(sourceFile, identifier);
