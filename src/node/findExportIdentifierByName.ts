@@ -1,7 +1,6 @@
-import { Identifier } from 'ts-morph';
 import type { SourceFile } from 'ts-morph';
 
-export const findExportIdentifierByName = (sourceFile: SourceFile, name: string): Identifier | undefined => {
+export const findExportIdentifierByName = (sourceFile: SourceFile, name: string) => {
   const namedExports = sourceFile
     .getExportDeclarations()
     .map(declaration => declaration.getNamedExports())

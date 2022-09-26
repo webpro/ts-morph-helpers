@@ -1,7 +1,7 @@
 import { ts } from 'ts-morph';
 import type { Node, Symbol } from 'ts-morph';
 
-export const getSymbolsOfNodes = (nodes: Node[]): Symbol[] =>
+export const getSymbolsOfNodes = (nodes: Node[]) =>
   nodes
     .map(node => node.getFirstDescendantByKind(ts.SyntaxKind.Identifier))
     .map(identifier => identifier?.getSymbol())

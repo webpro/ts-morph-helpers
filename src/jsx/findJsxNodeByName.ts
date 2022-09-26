@@ -1,4 +1,4 @@
-import type { SourceFile, Node } from 'ts-morph';
+import type { SourceFile } from 'ts-morph';
 import { findJsxNodes } from './findJsxNodes';
 
 export const findJsxNodeByName = (sourceFile: SourceFile, jsxElementName: string) => {
