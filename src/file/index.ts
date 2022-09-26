@@ -1,2 +1,2 @@
-export * from './getImplementationSourceFile';
+export * from './getRealSourceFileForImportDeclaration';
 export * from './isBarrel';

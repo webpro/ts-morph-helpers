@@ -4,8 +4,9 @@ Helpers for [ts-morph](https://ts-morph.com).
 
 ```
 src $ ls **/*.ts | grep -v spec | grep -v index.ts | sed "s/\.ts//"
+expressions/findCallExpressionsByName
 expressions/findCallExpressionsWithArg
-file/getImplementationSourceFile
+file/getRealSourceFileForImportDeclaration
 file/isBarrel
 jsx/findJsxNodeByName
 jsx/findJsxNodes
@@ -18,5 +19,5 @@ node/findImportSpecifierByName
 node/getDeclarationsForSymbols
 node/getImportDeclarationsForSymbols
 node/getSymbolsOfNodes
-react/getHookCallExpressions
+react/findHookCallExpressions
 ```
