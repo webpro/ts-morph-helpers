@@ -2,14 +2,17 @@
 
 Helpers for [ts-morph](https://ts-morph.com).
 
+## List
+
 ```
-src $ ls **/*.ts | grep -v spec | grep -v index.ts | sed "s/\.ts//"
 expressions/findCallExpressionsByName
 expressions/findCallExpressionsWithArg
 file/getRealSourceFileForImportDeclaration
+file/getSourceFilesForNodes
 file/isBarrel
 jsx/findJsxNodeByName
 jsx/findJsxNodes
+jsx/isJsx
 node/findExportDeclarationByIdentifier
 node/findExportDeclarationByName
 node/findExportIdentifierByName
@@ -19,5 +22,7 @@ node/findImportSpecifierByName
 node/getDeclarationsForSymbols
 node/getImportDeclarationsForSymbols
 node/getSymbolsOfNodes
+react/findContextProviderIdentifierByContextName
 react/findHookCallExpressions
+react/findHookIdentifierByContextName
 ```
