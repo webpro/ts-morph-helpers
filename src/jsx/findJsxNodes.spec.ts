@@ -18,3 +18,12 @@ test('findJsxNodes', () => {
   assert(result[0].isKind(ts.SyntaxKind.JsxOpeningElement));
   assert(result[1].isKind(ts.SyntaxKind.JsxSelfClosingElement));
 });
+
+test('findJsxNodes', () => {
+  const project = new Project({ useInMemoryFileSystem: true });
+  const sourceFile = project.createSourceFile('index.tsx', `const A = () => <B.C><D.E /></B.C>`);
+  const result = findJsxNodes(sourceFile);
+  assert(result.length === 2);
+  assert(result[0].isKind(ts.SyntaxKind.JsxOpeningElement));
+  assert(result[1].isKind(ts.SyntaxKind.JsxSelfClosingElement));
+});

@@ -1,7 +1,10 @@
 import type { SourceFile } from 'ts-morph';
 import { findJsxNodes } from './findJsxNodes';
+import { isJsx } from './isJsx';
 
-export const findJsxNodeByName = (sourceFile: SourceFile, jsxElementName: string) => {
+/** Find JSX node by tag name */
+export const findJsxNodeByName = (sourceFile: SourceFile, tagName: string) => {
+  if (!isJsx(sourceFile)) return;
   const nodes = findJsxNodes(sourceFile);
-  return nodes.find(node => node.getTagNameNode().getText() === jsxElementName);
+  return nodes.find(node => node.getTagNameNode().getText() === tagName);
 };
