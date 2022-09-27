@@ -8,6 +8,7 @@ const getRealSourceFileForIdentifier = (sourceFile: SourceFile, identifier: Iden
   return targetFile && targetFile !== sourceFile ? getRealSourceFileForIdentifier(targetFile, identifier) : sourceFile;
 };
 
+/** Get source file of import declaration, taking into account re-exports */
 export const getRealSourceFileForImportDeclaration = (importDeclaration: ImportDeclaration) => {
   const sourceFile = importDeclaration.getModuleSpecifierSourceFileOrThrow();
   const identifier = importDeclaration.getFirstDescendantByKindOrThrow(ts.SyntaxKind.Identifier);

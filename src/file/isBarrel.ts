@@ -1,6 +1,7 @@
 import { ts } from 'ts-morph';
 import type { SourceFile } from 'ts-morph';
 
+/** Returns if file is a barrel */
 export const isBarrel = (sourceFile: SourceFile) => {
   const namedExports = sourceFile.getDescendantsOfKind(ts.SyntaxKind.ExportDeclaration);
   const reExports = namedExports.filter(exportDeclaration => {

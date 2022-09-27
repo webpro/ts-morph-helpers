@@ -5,6 +5,7 @@ import { getDeclarationsForSymbols } from './getDeclarationsForSymbols';
 type Options = { onlyRelative: boolean };
 type GetImportDeclarationsForSymbols = (symbols: Symbol[], options?: Options) => ImportDeclaration[];
 
+/** Get import declarations for symbols (only ./relative ../imports by default) */
 export const getImportDeclarationsForSymbols: GetImportDeclarationsForSymbols = (
   symbols,
   options = { onlyRelative: true }

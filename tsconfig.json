@@ -14,6 +14,7 @@
     "moduleResolution": "node",
     "noEmit": false,
     "outDir": "./dist",
+    "removeComments": false,
     "resolveJsonModule": true,
     "rootDir": "./src",
     "skipDefaultLibCheck": true,
