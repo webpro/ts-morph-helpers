@@ -1,6 +1,6 @@
 import { ts } from 'ts-morph';
 import type { Symbol, ImportDeclaration } from 'ts-morph';
-import { getDeclarationsForSymbols } from './getDeclarationsForSymbols';
+import { getDeclarationsForSymbols } from '../node/getDeclarationsForSymbols';
 
 type Options = { onlyRelative: boolean };
 type GetImportDeclarationsForSymbols = (symbols: Symbol[], options?: Options) => ImportDeclaration[];

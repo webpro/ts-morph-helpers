@@ -1,6 +1,6 @@
 import { ts } from 'ts-morph';
 import type { SourceFile, ImportDeclaration, Identifier } from 'ts-morph';
-import { findExportDeclarationByIdentifier } from '../node/findExportDeclarationByIdentifier';
+import { findExportDeclarationByIdentifier } from '../module/findExportDeclarationByIdentifier';
 
 const getRealSourceFileForIdentifier = (sourceFile: SourceFile, identifier: Identifier): SourceFile => {
   const exportDeclaration = findExportDeclarationByIdentifier(sourceFile, identifier);
