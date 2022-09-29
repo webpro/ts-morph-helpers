@@ -5,11 +5,15 @@ Helpers for [ts-morph](https://ts-morph.com).
 ## List
 
 ```
+experimental/findJsxIdentifiersInJsxExpressions
+experimental/findJsxSymbolsInJsxExpressions
+experimental/getRealSourceFilesForImportDeclarations
+experimental/getReferencedSourceFiles
+experimental/isBarrel
 expressions/findCallExpressionsByName
 expressions/findCallExpressionsWithArg
 file/getRealSourceFileForImportDeclaration
 file/getSourceFilesForNodes
-file/isBarrel
 jsx/findJsxNodeByName
 jsx/findJsxNodes
 jsx/isJsx
