@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "node --loader tsx --test src/**/*.spec.ts",
-    "build": "rm -r dist && tsc",
-    "barrel": "barrel-maintainer --includeRootDir --singleQuotes --ts ./src",
+    "watch": "tsc --watch & npm run barrel",
+    "build": "rm -rf dist && tsc",
+    "barrel": "barrel-maintainer --singleQuotes --ts ./src",
     "prepublishOnly": "npm test && npm run build",
     "release": "release-it"
   },
