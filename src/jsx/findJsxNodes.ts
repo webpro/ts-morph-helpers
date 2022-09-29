@@ -1,5 +1,5 @@
 import { ts } from 'ts-morph';
-import type { SourceFile, ScriptKind } from 'ts-morph';
+import type { SourceFile } from 'ts-morph';
 import { isJsx } from './isJsx';
 
 /** Find all JSX nodes (opening and self-closing elements), excluding lower-cased (HTML) elements */

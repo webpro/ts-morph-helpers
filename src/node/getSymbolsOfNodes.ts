@@ -1,10 +1,7 @@
 import { ts } from 'ts-morph';
-import type { Node, Symbol } from 'ts-morph';
+import type { Node } from 'ts-morph';
+import { compact } from '../util';
 
-/** Get symbols of nodes */
+/** Return symbols of nodes, identifiers and symbols */
 export const getSymbolsOfNodes = (nodes: Node[]) =>
-  nodes
-    .map(node => node.getFirstDescendantByKind(ts.SyntaxKind.Identifier))
-    .map(identifier => identifier?.getSymbol())
-    .filter(Boolean)
-    .filter((symbol, index, self): symbol is Symbol => self.indexOf(symbol) === index);
+  compact(nodes.map(node => node?.getFirstDescendantByKind(ts.SyntaxKind.Identifier)?.getSymbol()));

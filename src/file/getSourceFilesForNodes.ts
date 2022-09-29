@@ -1,9 +1,6 @@
 import { ts } from 'ts-morph';
-import type { Node, SourceFile } from 'ts-morph';
+import type { Node } from 'ts-morph';
+import { compact } from '../util';
 
 /** Returns (unique) source files for given nodes */
-export const getSourceFilesForNodes = (nodes: Node<ts.Node>[]) => {
-  const sourceFiles = new Set<SourceFile>();
-  nodes.forEach(node => sourceFiles.add(node.getSourceFile()));
-  return [...sourceFiles];
-};
+export const getSourceFilesForNodes = (nodes: Node<ts.Node>[]) => compact(nodes.map(node => node.getSourceFile()));
