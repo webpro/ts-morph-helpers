@@ -1,3 +1,4 @@
+export * from './findDuplicateExportedNames';
 export * from './findExportDeclarationByIdentifier';
 export * from './findExportDeclarationByName';
 export * from './findExportIdentifierByName';

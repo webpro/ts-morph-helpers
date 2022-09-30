@@ -9,6 +9,7 @@ experimental/findJsxIdentifiersInJsxExpressions
 experimental/findJsxSymbolsInJsxExpressions
 experimental/getRealSourceFilesForImportDeclarations
 experimental/getReferencedSourceFiles
+experimental/hasSymbol
 experimental/isBarrel
 expressions/findCallExpressionsByName
 expressions/findCallExpressionsWithArg
@@ -17,6 +18,7 @@ file/getSourceFilesForNodes
 jsx/findJsxNodeByName
 jsx/findJsxNodes
 jsx/isJsx
+module/findDuplicateExportedNames
 module/findExportDeclarationByIdentifier
 module/findExportDeclarationByName
 module/findExportIdentifierByName
@@ -73,4 +75,3 @@ The following conventions are used to name the helper functions:
 - To `find` something means to query for things from a certain starting point (downwards).
 - To get things `For` something expresses an `AncestorForDescendant` hierarchy.
 - To get things `Of` something means the opposite: `descendantOfAncestor`.
-
