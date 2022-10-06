@@ -25,6 +25,7 @@ module/findExportIdentifierByName
 module/findExportSpecifierByName
 module/findImportIdentifierByName
 module/findImportSpecifierByName
+module/findNamespaceImports
 module/getImportDeclarationsForSymbols
 node/getDeclarationsForSymbols
 node/getSymbolsOfNodes
