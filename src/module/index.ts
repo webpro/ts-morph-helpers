@@ -5,5 +5,7 @@ export * from './findExportIdentifierByName';
 export * from './findExportSpecifierByName';
 export * from './findImportIdentifierByName';
 export * from './findImportSpecifierByName';
-export * from './findNamespaceImports';
+export * from './findReferencingNamespaceExports';
+export * from './findReferencingNamespaceImports';
+export * from './findReferencingNamespaceNodes';
 export * from './getImportDeclarationsForSymbols';
