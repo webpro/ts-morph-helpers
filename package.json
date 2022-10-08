@@ -2,6 +2,15 @@
   "name": "ts-morph-helpers",
   "version": "0.5.0",
   "description": "Helpers for ts-morph",
+  "keywords": [
+    "ts-morphine",
+    "helpers",
+    "typescript",
+    "ast"
+  ],
+  "repository": "github:webpro/ts-morph-helpers",
+  "homepage": "https://github.com/webpro/ts-morph-helpers",
+  "bugs": "https://github.com/webpro/ts-morph-helpers/issues",
   "main": "dist/index.js",
   "scripts": {
     "test": "node --loader tsx --test src/**/*.spec.ts",
@@ -14,7 +23,6 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
   "author": {
     "name": "Lars Kappert",
     "email": "lars@webpro.nl"
