@@ -7,7 +7,7 @@ export const findJsxNodes = (sourceFile: SourceFile) => {
   if (!isJsx(sourceFile)) return [];
   const nodes = [
     sourceFile.getDescendantsOfKind(ts.SyntaxKind.JsxOpeningElement),
-    sourceFile.getDescendantsOfKind(ts.SyntaxKind.JsxSelfClosingElement)
+    sourceFile.getDescendantsOfKind(ts.SyntaxKind.JsxSelfClosingElement),
   ].flat();
   return nodes.filter(node => /^[A-Z]/.test(node.getTagNameNode().getText()));
 };

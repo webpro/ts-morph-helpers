@@ -8,7 +8,7 @@ test('getSymbolsOfNodes', () => {
   const sourceFile = project.createSourceFile('index.ts', `const a = 1; const b = () => a;`);
   const nodes = [
     ...sourceFile.getDescendantsOfKind(ts.SyntaxKind.VariableDeclaration),
-    ...sourceFile.getDescendantsOfKind(ts.SyntaxKind.Identifier)
+    ...sourceFile.getDescendantsOfKind(ts.SyntaxKind.Identifier),
   ];
   const result = getSymbolsOfNodes(nodes);
   assert(result.length === 2);

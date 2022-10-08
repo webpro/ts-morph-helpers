@@ -17,6 +17,7 @@
     "watch": "tsc --watch & npm run barrel",
     "build": "rm -rf dist && tsc",
     "barrel": "barrel-maintainer --singleQuotes --ts ./src",
+    "format": "prettier src --write",
     "prepublishOnly": "npm test && npm run build",
     "release": "release-it"
   },
