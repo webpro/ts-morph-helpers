@@ -29,6 +29,7 @@ module/findReferencingNamespaceExports
 module/findReferencingNamespaceImports
 module/findReferencingNamespaceNodes
 module/getImportDeclarationsForSymbols
+module/hasReferencingDefaultImport
 node/getDeclarationsForSymbols
 node/getSymbolsOfNodes
 react/findContextProviderIdentifierByContextName

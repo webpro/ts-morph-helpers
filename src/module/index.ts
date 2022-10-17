@@ -9,3 +9,4 @@ export * from './findReferencingNamespaceExports';
 export * from './findReferencingNamespaceImports';
 export * from './findReferencingNamespaceNodes';
 export * from './getImportDeclarationsForSymbols';
+export * from './hasReferencingDefaultImport';
