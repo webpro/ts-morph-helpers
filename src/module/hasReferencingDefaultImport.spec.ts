@@ -11,6 +11,14 @@ test('hasReferencingDefaultImport', () => {
   assert(result);
 });
 
+test('hasReferencingDefaultImport (dynamic import)', () => {
+  const project = new Project({ useInMemoryFileSystem: true });
+  const sourceFile = project.createSourceFile('main.ts', `export default () => 1`);
+  project.createSourceFile('index.ts', `const main = import('./main'); main()`);
+  const result = hasReferencingDefaultImport(sourceFile);
+  assert(result);
+});
+
 test('hasReferencingDefaultImport', { skip: true }, () => {
   const project = new Project({ useInMemoryFileSystem: true });
   const sourceFile = project.createSourceFile('main.ts', `export default () => 1`);
