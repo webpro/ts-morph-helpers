@@ -30,16 +30,16 @@
   },
   "license": "Unlicense",
   "dependencies": {
-    "ts-morph": "16.0.0"
+    "ts-morph": "17.0.0"
   },
   "devDependencies": {
-    "@types/node": "18.11.4",
-    "@types/react": "18.0.21",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
     "barrel-maintainer": "1.5.3",
     "prettier": "2.7.1",
     "release-it": "15.5.0",
-    "tsx": "3.11.0",
-    "typescript": "4.8.4"
+    "tsx": "3.12.1",
+    "typescript": "4.9.3"
   },
   "release-it": {
     "github": {
